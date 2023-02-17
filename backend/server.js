@@ -6,7 +6,7 @@ const port = process.env.PORT || 4000;
 // the router where users will add new sessions
 const studyRouter = require('./routes/studyHours');
 // the root page router
-const rootRouter = require('./routes/root');
+
 // initialzing the expess app
 const app = express();
 
@@ -36,11 +36,12 @@ mongoose.connect(process.env.MONGODB_URI)
 
 
 // routing begins here
-
-// the root page router
-
-app.use('/', rootRouter);
+app.get('/', (req, res)=>{
+    res.json({
+        msg: "Welcome to the study hour website."
+    })
+})
 
 
 // add a session
-app.use('/add', studyRouter);
+app.use('/api/sessions', studyRouter);

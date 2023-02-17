@@ -3,7 +3,9 @@ const router = express.Router();
 
 
 
-router.get('', (req, res )=>{
+// all the sessions
+
+router.get('/', (req, res )=>{
     res.json({
         msg: "Welcome to the creation page"     
 
@@ -11,21 +13,35 @@ router.get('', (req, res )=>{
     })
 });
 
+// a single session using id
 
-
-// post request
-
-router.post('', (req, res)=>{
+router.get('/:id', (req, res)=>{
     res.json(
         {
-            msg: "A session has been added to the database."
+            msg: "Here is the single session"
         }
     )
 })
+
+
 // delete request
 
-// update request
+router.delete('/:id', (req, res)=>{
+    res.json(
+    {
+        msg: "The session has been deleted"
+    }
+    )
+})
 
+
+
+// update request
+router.patch('/:id', (res, req)=>{
+    res.json({
+        msg: "The session has been updated"
+    })
+})
 
 
 module.exports = router;
