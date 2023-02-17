@@ -1,8 +1,12 @@
 const express = require("express");
 require('dotenv').config();
 const mongoose = require('mongoose');
-const port = process.env.PORT || 4000
+const port = process.env.PORT || 4000;
+
+// the router where users will add new sessions
 const studyRouter = require('./routes/studyHours');
+// the root page router
+const rootRouter = require('./routes/root');
 // initialzing the expess app
 const app = express();
 
@@ -27,19 +31,15 @@ mongoose.connect(process.env.MONGODB_URI)
     })
     .catch(err=>{
         console.log(`There was an error connecting to the datase ${err}`);
-    })
+    });
 
 
 
 // routing begins here
 
-// the home page
+// the root page router
 
-app.get('/', (req, res)=>{
-    res.json({
-        msg: "Welcome to the Study-hours app"
-    })
-})
+app.use('/', rootRouter);
 
 
 // add a session

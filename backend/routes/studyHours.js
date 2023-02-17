@@ -12,4 +12,20 @@ router.get('', (req, res )=>{
 });
 
 
+
+// post request
+
+router.post('', (req, res)=>{
+    res.json(
+        {
+            msg: "A session has been added to the database."
+        }
+    )
+})
+// delete request
+
+// update request
+
+
+
 module.exports = router;
