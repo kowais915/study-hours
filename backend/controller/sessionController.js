@@ -2,24 +2,23 @@ const Session = require('../models/Session.js');
 
 // get all the sessions from the database
 
-const getAllSessions = (req, res )=>{
-    res.json(
-        {
-            msg: "Welcome to the creation page"
-        }
-    )
+const getAllSessions = async (req, res )=>{
+
+    const allSessions = await Session.find({})
+    res.json(allSessions)
 }
 
 
 
 
 // get a single session from the database
-const singleSession = (req, res )=>{
-    res.json(
-        {
-            msg: "This is the single session having the id that you specified."
-        }
-    )
+const singleSession = async(req, res )=>{
+
+    const { id } = req.params;
+    const singleSession = await Session.findById(id);
+
+    res.status(200).json(singleSession)
+    
 }
 
 
