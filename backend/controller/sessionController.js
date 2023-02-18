@@ -84,9 +84,7 @@ const sessionUpdate = async (req, res)=>{
     // updating the session if the id is valid
     const updatedSession = await Session.findOneAndUpdate({_id:id},
         {
-            subject: subject,
-            topic: topic,
-            hours: hours
+            ...req.body
 
 
         })
