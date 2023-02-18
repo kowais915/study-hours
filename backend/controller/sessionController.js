@@ -68,10 +68,33 @@ const postSession = async (req, res)=>{
 
 
 // update a single session in the database
-const sessionUpdate = (req, res)=>{
-    res.json({
-        msg: "This session that you specified has been updated."
-    })
+const sessionUpdate = async (req, res)=>{
+
+
+    // grab the id 
+    const {id } = req.params;
+
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).json({err: "404! Invalid ID!"});
+    }
+
+    // grabbing the properties
+    const {subject, topic, hours} = req.body;
+
+    // updating the session if the id is valid
+    const updatedSession = await Session.findOneAndUpdate({_id:id},
+        {
+            subject: subject,
+            topic: topic,
+            hours: hours
+
+
+        })
+    if(!updatedSession){
+        res.status(404).json({msg: "The session does not exist"});
+    }
+
+    res.status(200).json(updatedSession);
 }
 
 
