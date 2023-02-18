@@ -76,13 +76,35 @@ const sessionUpdate = (req, res)=>{
 
 
 // delete a single session from the database
-const deleteSession = (req, res )=>{
-    res.json(
+const deleteSession = async (req, res )=>{
 
-        {
-            msg: "The session has been delted."
+
+    const {id } = req.params;
+
+
+    // checking to see if the id is valid
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).json({error: "404! Invalid ID"});
+    }
+
+    // checking to see if the database has the document user is asking about
+    // const targetSession = await Session.findById(id);
+    // if(!targetSession){
+    //     return res.json({error: "Could not delete the document as it does not exit."})
+    // }
+
+    // deleting the document if does exist.dd
+    
+     const deletedSession = await Session.findOneAndDelete({_id:id});
+
+     if(!deletedSession){
+            return res.json({msg: "The session has been deleted"})
         }
-    )
+        // res.json(deleteSession, {msg:"The session has been deleted."});
+
+   res.json(workout);
+    
+
 }
 
 module.exports = {
