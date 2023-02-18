@@ -1,4 +1,5 @@
 const Session = require('../models/Session.js');
+const mongoose = require("mongoose");
 
 // get all the sessions from the database
 
@@ -15,9 +16,29 @@ const getAllSessions = async (req, res )=>{
 const singleSession = async(req, res )=>{
 
     const { id } = req.params;
+   
+    // checking the id's validity
+
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).json(
+            {
+                msg: "404! Oops! Please use a valid ID. "
+            }
+        )
+    }
     const singleSession = await Session.findById(id);
 
-    res.status(200).json(singleSession)
+    if (!singleSession){
+       return res.status(404).json(
+            {
+                error: "404. We could not find what you were looking for"
+            
+            
+            }
+        )
+    }
+
+    res.status(200).json(singleSession);
     
 }
 
