@@ -1,47 +1,54 @@
 const express = require('express');
 const router = express.Router();
+// importing the model
+const Session = require("../models/Session");
+// importing the controller
+const {
+    getAllSessions,
+    singleSession,
+    postSession,
+    sessionUpdate,
+    deleteSession,
+ 
 
+} = require("../controller/sessionController");
 
 
 // all the sessions
 
-router.get('/', (req, res )=>{
-    res.json({
-        msg: "Welcome to the creation page"     
-
-        
-    })
-});
-
-// a single session using id
-
-router.get('/:id', (req, res)=>{
-    res.json(
-        {
-            msg: "Here is the single session"
-        }
-    )
-})
+router.get('/', getAllSessions );
 
 
-// delete request
 
-router.delete('/:id', (req, res)=>{
-    res.json(
-    {
-        msg: "The session has been deleted"
-    }
-    )
-})
+
+
+// getting a single session using id
+
+router.get('/:id', singleSession);
+
+
+
+// post request
+
+router.post('/', postSession);
+
+
 
 
 
 // update request
-router.patch('/:id', (res, req)=>{
-    res.json({
-        msg: "The session has been updated"
-    })
-})
+router.patch('/:id', sessionUpdate);
+
+
+
+
+// delete request
+
+router.delete('/:id', deleteSession);
+
+
+
+
 
 
 module.exports = router;

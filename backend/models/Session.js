@@ -6,11 +6,16 @@ const Schema = mongoose.Schema;
 
 const sessionSchema = new Schema(
     {
-        topic: {
+
+
+
+        subject: {
             type: String, 
             required: true
-        }, 
-        subject: {
+        },
+
+        
+        topic: {
             type: String, 
             required: true
         }, 
@@ -18,6 +23,9 @@ const sessionSchema = new Schema(
             type: Number, 
             require: true
         }
+    },
+    {
+        timestamps: true
     }
 
 );
