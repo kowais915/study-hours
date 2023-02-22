@@ -27,7 +27,13 @@ const Main = () => {
         <div className="main">
             <div className="sessions">
                 {sessions && sessions.map((s)=>(
-                    <p key={s._id}>{s.subject}</p>
+                <div>
+                     <h1 key={s._id}>{s.subject}</h1>
+                     <p>{s.topic}</p>
+                     <p>{s.hours}</p>
+
+
+                </div>
                 ))}
             </div>
 
