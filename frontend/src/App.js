@@ -1,9 +1,12 @@
+
+
 import {
   BrowserRouter as Router, Routes, Route
 } from 'react-router-dom';
 
 // importing components
 import Nav  from './components/Nav'
+import Main from './components/Main'
 
 function App() {
 
@@ -14,10 +17,12 @@ function App() {
       <div className="navbar">
         <Nav />
       </div>
-      
-      <div className = "title">
-        <h1>Study Hours</h1>
+
+      <div className="main">
+        <Main />
       </div>
+      
+      
 
 
 
