@@ -26,20 +26,28 @@ a{
   padding: 40px;
   margin-bottom: 20px;
   border-bottom: rgb(206, 23, 78) solid 2px;
+  color: rgb(207, 51, 103);
 }
 
 .links{
   display: flex;
+  
 
+}
+
+.links > a{
+  color: rgb(207, 51, 103);;
 }
 
 /* styling each session */
 .sessions > div{
-  border: solid red 2px;
+  border: solid rgb(196, 62, 52) 2px;
   padding: 40px 50px;
-  margin: 50px 300px;
+  margin: 45px 300px;
   border-radius: 20px;
-  border-color: rgb(116, 107, 107);
+  border-color: rgb(202, 72, 72);
+  color: white;
+  background-color: rgb(207, 51, 103);
 
 
   
@@ -57,3 +65,18 @@ a{
   
   
 } */
+
+.del{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* styling user actions */
+.userActions{
+  display: flex;
+  justify-content: space-between;
+}
+
+.userActions > div > p{
+  margin: 5px;
+}

@@ -28,10 +28,19 @@ const Main = () => {
             <div className="sessions">
                 {sessions && sessions.map((s)=>(
                 <div>
+                    <div className="del">
                      <h2 key={s._id}>{s.subject}</h2>
+                     <div className="userActions">
+                        <div><p>Delete</p></div>
+                        <div><p>Edit</p></div>
+                    </div>
+                     
+                    </div>
                      <br></br>
                      <p><strong>Topic: </strong>{s.topic}</p>
                      <p><strong>Hours: </strong>{s.hours}</p>
+                     <p>{s.createdAt}</p>
+                     
 
 
                 </div>
