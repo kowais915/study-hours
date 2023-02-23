@@ -32,3 +32,28 @@ a{
   display: flex;
 
 }
+
+/* styling each session */
+.sessions > div{
+  border: solid red 2px;
+  padding: 40px 50px;
+  margin: 50px 300px;
+  border-radius: 20px;
+  border-color: rgb(116, 107, 107);
+
+
+  
+  
+}
+
+
+/* styling the outter div. Using flexbox */
+
+/* #root > div > div.main > div > div{
+  display: flex;
+  flex-wrap: wrap; 
+ 
+
+  
+  
+} */
