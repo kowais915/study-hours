@@ -89,3 +89,42 @@ a{
 .userActions > div > p{
   margin: 5px;
 }
+
+/* styling the form */
+
+
+#root > div > div > div.form > form{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 400px;
+  justify-content: center;
+  margin: 5em auto;
+  background-color: rgb(207, 51, 103);
+  color: white;
+  padding: 10vh;
+  border-radius: 20px;
+  box-shadow: 4px 4px 20px rgb(207, 51, 103);
+}
+
+
+label{
+  margin-top: 10px;
+}
+input{
+  border: 2px solid white;
+  border-radius: 2px;
+}
+
+button{
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px white solid;
+
+}
+
+button:hover{
+  background-color:rgb(207, 51, 103) ;
+  color: white;
+}
