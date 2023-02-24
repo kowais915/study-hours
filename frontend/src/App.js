@@ -1,29 +1,49 @@
 
 
 import {
-  BrowserRouter as Router, Routes, Route
+  BrowserRouter, Routes, Route
 } from 'react-router-dom';
 
 // importing components
 import Nav  from './components/Nav'
 import Main from './components/Main'
+import Create from './pages/Create'
+import Home from './pages/Page'
 
 function App() {
 
   return (
     <div className="App">
+      <BrowserRouter>
 
-    {/* navbar  */}
-      <div className="navbar">
-        <Nav />
-      </div>
+          <Routes>
 
-      <div className="main">
-        <Main />
-      </div>
-      
-      
+            <Route
+              path='/create'
+              element = {<Create/>}
+            
+            
+            
+            />
 
+
+            <Route
+              path='/'
+              element = {<Home/>}
+            
+            
+            
+            
+            />
+
+
+          </Routes>
+   
+
+
+
+          
+      </BrowserRouter>
 
 
 

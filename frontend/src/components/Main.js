@@ -31,8 +31,8 @@ const Main = () => {
                     <div className="del">
                      <h2 key={s._id}>{s.subject}</h2>
                      <div className="userActions">
-                        <div><p>Delete</p></div>
-                        <div><p>Edit</p></div>
+                        <div><p className="delete">Delete</p></div>
+                        <div><p className="edit">Edit</p></div>
                     </div>
                      
                     </div>

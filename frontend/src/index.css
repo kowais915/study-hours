@@ -71,6 +71,14 @@ a{
   justify-content: space-between;
 }
 
+
+#root > div > div.main > div > div > div:nth-child(1) > div > div > div:nth-child(2) > p:hover{
+  font-size: 15px;
+}
+
+#root > div > div.main > div > div > div:nth-child(1) > div > div > div:nth-child(1) > p:hover{
+  font-size: 15px;
+}
 /* styling user actions */
 .userActions{
   display: flex;
