@@ -32,7 +32,7 @@ const Main = () => {
                      <h2 key={s._id}>{s.subject}</h2>
                      <div className="userActions">
                         <div><p className="delete">Delete</p></div>
-                        <div><p className="edit">Edit</p></div>
+                        
                     </div>
                      
                     </div>
