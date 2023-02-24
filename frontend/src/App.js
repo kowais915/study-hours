@@ -8,7 +8,8 @@ import {
 import Nav  from './components/Nav'
 import Main from './components/Main'
 import Create from './pages/Create'
-import Home from './pages/Page'
+import Home from './pages/Home'
+import About from './pages/About'
 
 function App() {
 
@@ -30,10 +31,15 @@ function App() {
             <Route
               path='/'
               element = {<Home/>}
-            
-            
-            
-            
+
+            />
+
+
+            <Route
+              path='/about'
+              element ={<About/>}
+
+
             />
 
 
